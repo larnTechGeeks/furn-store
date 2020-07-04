@@ -11,7 +11,7 @@
                 <div class="col-lg-8">
                     <div class="breadcrumb_iner">
                         <div class="breadcrumb_iner_item">
-                            <h2>Shop Category</h2>
+                            <h2>Furniture Category</h2>
                             <p>Home <span>-</span> Shop Category</p>
                         </div>
                     </div>
@@ -204,41 +204,18 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-12">
                     <div class="best_product_slider owl-carousel">
-                        <div class="single_product_item">
-                            <img src="{% static 'pages/img/product/product_1.png' %}" alt="">
-                            <div class="single_product_text">
-                                <h4>Office Arm Chair</h4>
-                                <h3>Ksh.7500</h3>
-                            </div>
-                        </div>
-                        <div class="single_product_item">
-                            <img src="{% static 'pages/img/product/product_2.png' %}" alt="">
-                            <div class="single_product_text">
-                                <h4>Office Arm Chair</h4>
-                                <h3>Ksh.7500</h3>
-                            </div>
-                        </div>
-                        <div class="single_product_item">
-                            <img src="{% static 'pages/img/product/product_3.png' %}" alt="">
-                            <div class="single_product_text">
-                                <h4>Office Arm Chair</h4>
-                                <h3>Ksh.7500</h3>
-                            </div>
-                        </div>
-                        <div class="single_product_item">
-                            <img src="{% static 'pages/img/product/product_4.png' %}" alt="">
-                            <div class="single_product_text">
-                                <h4>Office Arm Chair</h4>
-                                <h3>Ksh.7500</h3>
-                            </div>
-                        </div>
-                        <div class="single_product_item">
-                            <img src="{% static 'pages/img/product/product_5.png' %}" alt="">
-                            <div class="single_product_text">
-                                <h4>Office Arm Chair</h4>
-                                <h3>Ksh.7500</h3>
-                            </div>
-                        </div>
+                        {% for furniture in furnitures %}
+                            {% if furniture.category == 'BS' %}
+                                <div class="single_product_item">
+                                    <img src="{{ furniture.photo.url }}" width="263" height= "280" alt="Furniture Photo">
+                                    <div class="single_product_text">
+                                        <h4>Office Arm Chair</h4>
+                                        <h3>Ksh.7500</h3>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                        
                     </div>
                 </div>
             </div>
