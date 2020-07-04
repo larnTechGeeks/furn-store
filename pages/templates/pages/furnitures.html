@@ -151,9 +151,9 @@
                         {% for furniture in furnitures %}
                             <div class="col-lg-4 col-sm-6">
                                 <div class="single_product_item">
-                                    <img src="{{ furniture.photo.url }}" width="263" height= "280" alt="Furniture Photo">
+                                    <a href="{% url 'furniture_detail' furniture.id %}"><img src="{{ furniture.photo.url }}" width="263" height= "280" alt="Furniture Photo"></a>
                                     <div class="single_product_text">
-                                        <h4>{{ furniture.furniture_name }}</h4>
+                                        <a href="{% url 'furniture_detail' furniture.id %}"><h4>{{ furniture.furniture_name }}</h4></a>
                                         <h3><b>Ksh.</b>{{ furniture.price|floatformat:2 }}</h3>
                                         <a href="#" class="add_cart">+ {{ furniture.phone_number }}<i class="ti-heart"></i></a>
                                     </div>
@@ -207,10 +207,10 @@
                         {% for furniture in furnitures %}
                             {% if furniture.category == 'BS' %}
                                 <div class="single_product_item">
-                                    <img src="{{ furniture.photo.url }}" width="263" height= "280" alt="Furniture Photo">
+                                    <a href="{% url 'furniture_detail' furniture.id %}"><img src="{{ furniture.photo.url }}" width="263" height= "280" alt="Furniture Photo"></a>
                                     <div class="single_product_text">
-                                        <h4>Office Arm Chair</h4>
-                                        <h3>Ksh.7500</h3>
+                                        <a href="{% url 'furniture_detail' furniture.id %}"><h4>{{ furniture.furniture_name }}</h4></a>
+                                        <h3>{{ furniture.price }}</h3>
                                     </div>
                                 </div>
                             {% endif %}

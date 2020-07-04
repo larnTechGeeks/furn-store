@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from pages.models import Furniture
 def index(request):
     template_name = 'pages/index.html'
@@ -25,3 +25,8 @@ class FurnitureListView(ListView):
     model = Furniture
     template_name = 'pages/furnitures.html'
     context_object_name = 'furnitures'
+
+class FurnitureDetailView(DetailView):
+    model = Furniture 
+    template_name = 'pages/furniture_single.html'
+    context_object_name = 'furniture'

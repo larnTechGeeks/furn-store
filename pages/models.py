@@ -16,6 +16,8 @@ class Furniture(models.Model):
     photo               = models.ImageField(default='feature_2.png',upload_to='furniture_images')
     price               = models.FloatField()
     condition           = models.CharField(choices=CONDITION_CHOICES, max_length=2)
+    availability        = models.BooleanField(default=True)
+    description         = models.TextField(null=True, blank=True)
 
 
     def __str__(self):

@@ -1,0 +1,117 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block content %}
+
+   <!-- breadcrumb start-->
+  <section class="breadcrumb breadcrumb_bg">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="breadcrumb_iner">
+            <div class="breadcrumb_iner_item">
+              <h2>Furniture Details</h2>
+              <p>Home <span>-</span> Furniture Details</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- breadcrumb start-->
+  <!--================End Home Banner Area =================-->
+
+  <!--================Single Product Area =================-->
+  <div class="product_image_area section_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7 col-xl-7">
+            <img src="{{ furniture.photo.url }}" width="500" />
+          <!-- <div class="product_slider_img">
+            <div data-thumb="{{ product.photo.url }}">
+            <img src="{{ furniture.photo.url }}" />
+            </div>
+            <div data-thumb="{{ furniture.photo.url }}">
+            <img src="{{ furniture.photo.url }}" />
+            </div>
+            <div data-thumb="{{ furniture.photo.url }}">
+            <img src="{{ furniture.photo.url }}" />
+            </div>
+          </div> -->
+        </div>
+        <div class="col-lg-5 col-xl-4">
+          <div class="s_product_text">
+            <h5>previous <span>|</span> next</h5>
+            <h3>{{ furniture.furniture_name }}</h3>
+            <h2>{{ furniture.price|floatformat:2 }}</h2>
+            <ul class="list">
+              <li>
+                <a class="active" href="#">
+                  <span>Category</span> : {{ furniture.get_furniture_type_display }}</a>
+              </li>
+              <li>
+                <a href="#"> <span>Availibility</span> : 
+                    {% if furniture.availability %}
+                        In Stock
+                    {% else %}
+                        <b>Out of Stock</b> 
+                    {% endif %}
+                    </a>
+              </li>
+            </ul>
+            <p>
+                {% if furniture.description %}
+                    {{ furniture.description }}
+                {% else %}
+                    No description 
+                {% endif %}
+            </p>
+            <div class="card_area d-flex justify-content-between align-items-center">
+              <div class="product_count">
+                <span class="inumber-decrement"> <i class="ti-minus"></i></span>
+                <input class="input-number" type="text" value="1" min="0" max="10">
+                <span class="number-increment"> <i class="ti-plus"></i></span>
+              </div>
+              <a href="#" class="like_us"> <i class="fas fa-phone"></i> </a>
+              <a href="#" class="like_us"> <i class="ti-heart"></i> </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--================End Single Product Area =================-->
+
+  <!--================Product Description Area =================-->
+  <section class="product_description_area">
+    <div class="container">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+            aria-selected="true">Description</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+            aria-selected="false">Specification</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+            aria-selected="false">Comments</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review"
+            aria-selected="false">Reviews</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <!--Description-->
+        <!--properties-->
+        
+        <!--review-->
+        
+        <!--end review-->
+      </div>
+    </div>
+  </section>
+ 
+{% endblock content %}
