@@ -6,8 +6,8 @@ from .category_types import CATEGORY_CHOICES
 
 # Create your models here.
 class Furniture(models.Model):
-    furn_name           = models.CharField(max_length=100)
-    furn_type           = models.CharField(choices=FURNITURE_CHOICES, max_length=2)
+    furniture_name      = models.CharField(max_length=100, default="Coffee Table")
+    furniture_type      = models.CharField(choices=FURNITURE_CHOICES, max_length=2, default="Table")
     category            = models.CharField(choices=CATEGORY_CHOICES ,max_length=2)
     seller              = models.CharField(max_length=100)
     phone_regex         = RegexValidator(regex = r'^(\+\d{1,3})?,?\s?\d{8,13}', message="Phone number must be entered int the format: '+254700000000'. Up to 14 digits allowed.")
