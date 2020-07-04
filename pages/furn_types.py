@@ -5,5 +5,6 @@ FURNITURE_CHOICES = (
     ('OF', 'Office Furniture'),
     ('ST', 'Stool'),
     ('CH', 'Chair'),
-    ('CA', 'Case')
+    ('CA', 'Case'),
+    ('BE', 'Bed')
 )

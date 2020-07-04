@@ -16,3 +16,7 @@ class Furniture(models.Model):
     price               = models.FloatField()
     condition           = models.CharField(choices=CONDITION_CHOICES, max_length=2)
 
+
+    def __str__(self):
+        return f"{self.furniture_name}"
+
