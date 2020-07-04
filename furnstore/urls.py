@@ -23,8 +23,8 @@ urlpatterns = [
     path('', include('pages.urls')),
 ]
 
-admin.site.site_header = "FURNITURE STORE"
-admin.site.site_title = "FS Admin Portal"
+admin.site.site_header = "AMDIGITAL FURNITURE STORE"
+admin.site.site_title = "AMDIGITAL Admin Portal"
 admin.site.index_title = "Place to get the best Furniture"
 
 if settings.DEBUG:

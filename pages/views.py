@@ -22,5 +22,6 @@ class HomeListView(ListView):
     context_object_name = 'furnitures'
 #LISTVIEW
 class FurnitureListView(ListView):
+    model = Furniture
     template_name = 'pages/furnitures.html'
     context_object_name = 'furnitures'
