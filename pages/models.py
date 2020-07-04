@@ -26,7 +26,7 @@ class Furniture(models.Model):
         img = Image.open(self.photo.path)
         #Setting Size
         new_size = (263, 280)
-        img.thumbnail(max_size, Image.ANTIALIAS)
-        img.save(self.image.path)
+        img.thumbnail(new_size)
+        img.save(self.photo.path)
 
 
