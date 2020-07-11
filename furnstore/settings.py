@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'b-zkkvu4&&z6=gev(#a$jl1h!y(d)8l#s34h&)uvf^_^ehv^fc'
+SECRET_KEY = os.environ.get('AMD_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     'pages.apps.PagesConfig',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -136,4 +137,11 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL= 'home'
 
+#AWS CONFIG
+AWS_ACCESS_KEY_ID           = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY       = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME     = os.environ.get('AMD_AWS_STORAGE_BUCKET_NAME')
+AWS_S3_FILE_OVERWRITE       = False
+AWS_DEFAULT_ACL             = None
+DEFAULT_FILE_STORAGE        = 'storages.backends.s3boto3.S3Boto3Storage'
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
