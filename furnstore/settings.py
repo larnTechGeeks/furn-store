@@ -27,6 +27,13 @@ DEBUG = (os.environ.get('DEBUG_VALUE')== 'True')
 
 ALLOWED_HOSTS = ['localhost', 'amdigital.herokuapp.com', 'www.amdigitalfurnitures.com']
 
+#Whitenoise
+MIDDLEWARE_CLASSES = (
+    # Simplified static file serving.
+    # https://warehouse.python.org/project/whitenoise/
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+)
+
 
 # Application definition
 
@@ -144,6 +151,7 @@ AWS_STORAGE_BUCKET_NAME     = os.environ.get('AMD_AWS_STORAGE_BUCKET_NAME')
 AWS_S3_FILE_OVERWRITE       = False
 AWS_DEFAULT_ACL             = None
 DEFAULT_FILE_STORAGE        = 'storages.backends.s3boto3.S3Boto3Storage'
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#Whitenoise storage for static files
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 django_heroku.settings(locals())
