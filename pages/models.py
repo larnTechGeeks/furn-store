@@ -23,12 +23,12 @@ class Furniture(models.Model):
     def __str__(self):
         return f"{self.furniture_name}"
 
-    def save(self, *args, **kwargs):
+    """ def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
         img = Image.open(self.photo.path)
         #Setting Size
         new_size = (263, 280)
         img.thumbnail(new_size)
-        img.save(self.photo.path)
+        img.save(self.photo.path) """
 
 
